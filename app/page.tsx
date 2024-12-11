@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Pump } from "basehub/react-pump";
 import { Posts } from "./posts";
 import { PAGE_SIZE, Post } from "./constants";
@@ -25,10 +26,12 @@ export default function Home() {
         "use server";
 
         return (
-          <Posts
-            initialPosts={blog.posts.items}
-            numPages={Math.ceil(blog.posts._meta.totalCount / PAGE_SIZE)}
-          />
+          <React.Suspense fallback={null}>
+            <Posts
+              initialPosts={blog.posts.items}
+              numPages={Math.ceil(blog.posts._meta.totalCount / PAGE_SIZE)}
+            />
+          </React.Suspense>
         );
       }}
     </Pump>
