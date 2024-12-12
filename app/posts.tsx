@@ -67,6 +67,7 @@ export function Posts({
                 style={{
                   padding: "1rem",
                   backgroundColor: "#f5f5f5",
+                  color: "#333",
                   borderRadius: "4px",
                   fontSize: "1.1rem",
                 }}
